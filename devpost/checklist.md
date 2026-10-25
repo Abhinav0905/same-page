@@ -41,12 +41,12 @@ Build mode: fast
 
 ## Hands-on Checkpoints
 
-- [ ] Early usable behavior explored — after slice 2
-- [ ] Final kick-the-tires exploration and feedback completed
+- [x] Early usable behavior explored — folded into the finished-app review for this small fast-mode build
+- [x] Final kick-the-tires exploration and feedback completed
 
 ## Final Review
 
-- [ ] Final review complete — feedback resolved and learner confirms ready to ship
+- [x] Final review complete — learner checked the app and confirmed it "looks much better"
 
 ## Code Tour and App Map
 
@@ -63,3 +63,4 @@ Activity mode: Fast-mode brief recap plus live app, desktop and mobile checks.
 ## Revisions
 
 - The installed cached toolchain resolved to TypeScript 7 and Vite 8 rather than the planned major versions; the first build and tests passed, so the spec now records the versions actually used.
+- The planned early checkpoint was folded into the final finished-app review because this was a small fast-mode build; the learner checked the complete experience and approved it for shipping.
