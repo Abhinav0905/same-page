@@ -9,7 +9,7 @@ Build mode: fast
 
 ## Slices
 
-- [ ] **1. Two accounts become a real comparison**
+- [x] **1. Two accounts become a real comparison**
   Becomes usable: A running, styled browser app where the roommate sample fills two account cards and Compare returns the five agreement dimensions.
   Why now: This proves the unique kernel on the first working slice. The scaffold, inputs and comparison logic exist only to make that visible.
   PRD ref: `prd.md > The Core Journey`, `prd.md > Two independent accounts`, `prd.md > Structured comparison`

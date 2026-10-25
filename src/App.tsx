@@ -1,25 +1,12 @@
 import { useMemo, useRef, useState } from "react";
 import { AccountInput } from "./components/AccountInput";
+import { ComparisonCard } from "./components/ComparisonCard";
+import { ComparisonSummary } from "./components/ComparisonSummary";
 import { roommateSample } from "./data/roommateSample";
 import { compareAccounts } from "./lib/compare";
-import type { AgreementDraft, ComparisonResult, Dimension } from "./types";
+import type { AgreementDraft, ComparisonResult } from "./types";
 
 const emptyDraft: AgreementDraft = { personName: "", text: "" };
-
-const dimensionLabel: Record<Dimension, string> = {
-  people: "People",
-  action: "Action",
-  time: "Time",
-  money: "Money",
-  conditions: "Conditions",
-};
-
-const verdictLabel = {
-  aligned: "Aligned",
-  check: "Needs a check",
-  missing: "Not mentioned",
-  unrecognized: "Not identified",
-};
 
 function App() {
   const [accountA, setAccountA] = useState<AgreementDraft>(emptyDraft);
@@ -85,25 +72,31 @@ function App() {
 
       {result && (
         <section className="results-section" ref={resultsRef} aria-labelledby="results-title">
-          <div className="section-heading">
-            <p className="eyebrow">Step two</p>
-            <h2 id="results-title">Here is where your versions split.</h2>
-            <p>{result.alignedCount} aligned · {result.reviewCount} to check</p>
-          </div>
-          <div className="basic-results">
-            {result.dimensions.map((item) => (
-              <article key={item.dimension} className={`basic-result ${item.verdict}`}>
-                <div>
-                  <span>{dimensionLabel[item.dimension]}</span>
-                  <strong>{verdictLabel[item.verdict]}</strong>
-                </div>
-                <p>{item.summary}</p>
-                <small>{item.accountA.phrase ?? "Not found"} · {item.accountB.phrase ?? "Not found"}</small>
-              </article>
+          <p className="eyebrow">Step two</p>
+          <ComparisonSummary alignedCount={result.alignedCount} reviewCount={result.reviewCount} />
+          <div className="comparison-list">
+            {result.dimensions.map((item, index) => (
+              <ComparisonCard
+                key={item.dimension}
+                result={item}
+                accountAName={accountA.personName}
+                accountBName={accountB.personName}
+                index={index}
+              />
             ))}
           </div>
+          <p className="truth-note">
+            <span aria-hidden="true">i</span>
+            Same Page compares the words you entered. It cannot know what was said, intended or promised.
+          </p>
         </section>
       )}
+
+      <footer>
+        <a className="wordmark footer-wordmark" href="#top"><span aria-hidden="true">=</span> Same Page</a>
+        <p>Your words stay in this browser tab. Nothing is saved or sent.</p>
+        <p>Built as a conversation aid, not a mediator or legal tool.</p>
+      </footer>
     </main>
   );
 }
