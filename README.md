@@ -6,11 +6,15 @@ Same Page compares two accounts of an everyday agreement across five concrete de
 
 Built for [Build With AI: Basics](https://learn-ai-basics.devpost.com/) with the Devpost Learn Skill Pack.
 
+**[Open the live interactive demo](https://abhinav0905.github.io/same-page/)**
+
 ## Why it exists
 
 Small disagreements often begin with two people honestly remembering the same conversation differently. A generic summary hides that difference. Same Page keeps the two accounts separate, compares them without blame and turns each mismatch into one answerable question.
 
 ## Try the proof of concept
+
+Use the [live GitHub Pages app](https://abhinav0905.github.io/same-page/), or run it locally.
 
 Requirements: Node.js 20 or newer.
 

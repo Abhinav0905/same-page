@@ -68,6 +68,7 @@ A later version could collect each account through a private link, add more agre
 ## Public links
 
 - Repository: https://github.com/Abhinav0905/same-page
+- Live app: https://abhinav0905.github.io/same-page/
 - License: https://github.com/Abhinav0905/same-page/blob/main/LICENSE
 - Demo video: https://youtu.be/mtnMoL7YR4I
 - Devpost project: https://devpost.com/software/same-page-yhder6
