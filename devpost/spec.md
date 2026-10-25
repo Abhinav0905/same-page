@@ -28,9 +28,9 @@ No network request is in the core journey.
 
 ## Stack
 
-- **TypeScript 5** — catches inconsistent result shapes early. Documentation: https://www.typescriptlang.org/docs/
+- **TypeScript 7** — catches inconsistent result shapes early. Documentation: https://www.typescriptlang.org/docs/
 - **React 19** — fits the interactive one-page flow and the learner's previous event build. Documentation: https://react.dev/
-- **Vite 7** — fast local development and a static production build. Documentation: https://vite.dev/guide/
+- **Vite 8** — fast local development and a static production build. Documentation: https://vite.dev/guide/
 - **Plain CSS** — enough for a distinctive visual system without adding a component library.
 - **Vitest** — unit checks for parsing and comparison. Documentation: https://vitest.dev/guide/
 - **Playwright** — browser checks for the sample, copy-ready result and reset loop. Documentation: https://playwright.dev/docs/intro

@@ -61,3 +61,5 @@ Reflection: Not started.
 Activity mode: fast mode; focused alternative planned.
 
 ## Revisions
+
+- The installed cached toolchain resolved to TypeScript 7 and Vite 8 rather than the planned major versions; the first build and tests passed, so the spec now records the versions actually used.
