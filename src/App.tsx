@@ -22,11 +22,17 @@ function App() {
     [accountA, accountB],
   );
 
-  const loadSample = () => {
+  const showComparison = (left: AgreementDraft, right: AgreementDraft) => {
+    const nextResult = compareAccounts(left, right);
+    setResult(nextResult);
+    setConfirmation(buildConfirmation(left, right, nextResult));
+    window.setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
+  };
+
+  const runSample = () => {
     setAccountA(roommateSample.accountA);
     setAccountB(roommateSample.accountB);
-    setResult(null);
-    setConfirmation("");
+    showComparison(roommateSample.accountA, roommateSample.accountB);
   };
 
   const changeAccountA = (next: AgreementDraft) => {
@@ -43,10 +49,7 @@ function App() {
 
   const compare = () => {
     if (!canCompare) return;
-    const nextResult = compareAccounts(accountA, accountB);
-    setResult(nextResult);
-    setConfirmation(buildConfirmation(accountA, accountB, nextResult));
-    requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    showComparison(accountA, accountB);
   };
 
   const reset = () => {
@@ -63,17 +66,42 @@ function App() {
         <a className="wordmark" href="#top" aria-label="Same Page home">
           <span aria-hidden="true">=</span> Same Page
         </a>
-        <p className="eyebrow">A tiny clarity check for everyday agreements</p>
-        <h1 id="page-title">Two people. One conversation. <em>Two different memories.</em></h1>
-        <p className="hero-copy">
-          Compare what each person heard before a small gap becomes a big argument. No blame. Just the details to check.
-        </p>
-        <button className="sample-button" onClick={loadSample}>Try the roommate example <span aria-hidden="true">→</span></button>
-        <ol className="process" aria-label="How Same Page works">
-          <li><span>1</span>Write each version</li>
-          <li><span>2</span>Spot the gaps</li>
-          <li><span>3</span>Confirm one plan</li>
-        </ol>
+        <div className="hero-grid">
+          <div className="hero-intro">
+            <p className="eyebrow">A tiny clarity check for everyday agreements</p>
+            <h1 id="page-title">Two people. One conversation. <em>Two different memories.</em></h1>
+            <p className="hero-copy">
+              Compare what each person heard before a small gap becomes a big argument. No blame. Just the details to check.
+            </p>
+            <ol className="process" aria-label="How Same Page works">
+              <li><span>1</span>Write each version</li>
+              <li><span>2</span>Spot the gaps</li>
+              <li><span>3</span>Confirm one plan</li>
+            </ol>
+          </div>
+
+          <aside className="worked-example" aria-labelledby="worked-example-title">
+            <p className="example-kicker">Worked example · roommates</p>
+            <h2 id="worked-example-title">One agreement. Two memories.</h2>
+            <p className="example-intro">Maya and Jordan agree that Maya will pay rent. The details tell a different story.</p>
+            <div className="example-memories">
+              <article>
+                <span>Maya remembers</span>
+                <blockquote>{roommateSample.accountA.text}</blockquote>
+              </article>
+              <article>
+                <span>Jordan remembers</span>
+                <blockquote>{roommateSample.accountB.text}</blockquote>
+              </article>
+            </div>
+            <div className="example-outcome" aria-label="Expected comparison result">
+              <strong><b>2</b> details align</strong>
+              <strong><b>3</b> need a quick check</strong>
+            </div>
+            <p className="example-explanation">Same Page turns the amount, date and utility condition into three neutral questions.</p>
+            <button className="sample-button" onClick={runSample}>Compare this example <span aria-hidden="true">→</span></button>
+          </aside>
+        </div>
       </section>
 
       <section className="input-section" id="top" aria-labelledby="input-title">

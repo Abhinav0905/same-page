@@ -2,8 +2,10 @@ import { expect, test } from "@playwright/test";
 
 test("the roommate sample exposes three gaps and creates a shared message", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "Try the roommate example" }).click();
-  await page.getByRole("button", { name: "Compare our versions" }).click();
+  await expect(page.getByRole("heading", { name: "One agreement. Two memories." })).toBeVisible();
+  await expect(page.getByText("2 details align", { exact: true })).toBeVisible();
+  await expect(page.getByText("3 need a quick check", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Compare this example" }).click();
 
   await expect(page.getByRole("heading", { name: "Here is where your versions split." })).toBeVisible();
   await expect(page.locator(".score")).toContainText(/2\s*of 5 aligned/);
@@ -19,8 +21,7 @@ test("the roommate sample exposes three gaps and creates a shared message", asyn
 
 test("the shared message is editable and reset clears the experience", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "Try the roommate example" }).click();
-  await page.getByRole("button", { name: "Compare our versions" }).click();
+  await page.getByRole("button", { name: "Compare this example" }).click();
 
   const message = page.getByLabel("Shared confirmation message");
   await message.fill("Here is the plan we both confirmed.");

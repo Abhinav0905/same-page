@@ -47,6 +47,7 @@ Build mode: fast
 ## Final Review
 
 - [x] Final review complete — learner checked the app and confirmed it "looks much better"
+- [ ] Judge-first opening shows the two sample memories, explains the expected gaps and runs the worked comparison in one click
 
 ## Code Tour and App Map
 
@@ -64,3 +65,4 @@ Activity mode: Fast-mode brief recap plus live app, desktop and mobile checks.
 
 - The installed cached toolchain resolved to TypeScript 7 and Vite 8 rather than the planned major versions; the first build and tests passed, so the spec now records the versions actually used.
 - The planned early checkpoint was folded into the final finished-app review because this was a small fast-mode build; the learner checked the complete experience and approved it for shipping.
+- 2026-10-25: Learner feedback found that the empty first view still made judges infer the use case. Add a visible two-memory worked example and a one-click result without changing the comparison boundary.

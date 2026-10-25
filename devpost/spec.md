@@ -15,9 +15,9 @@ This shape keeps the proof reliable, private and easy to record. It does not pre
 
 PRD ref: `prd.md > The Core Journey`.
 
-1. The React page loads with empty `AccountInput` cards and a visible sample action.
-2. Typing changes the in-memory `AgreementDraft` values.
-3. Loading the sample replaces both drafts with the bundled roommate scenario.
+1. The React page loads with a visible worked example: Maya's memory, Jordan's memory and the expected 2-aligned/3-check result.
+2. The example action fills both `AccountInput` cards, passes the bundled drafts to `compareAccounts` and opens the result in one click.
+3. A visitor can instead type into the empty cards; typing changes the in-memory `AgreementDraft` values.
 4. Compare passes both drafts to `compareAccounts`.
 5. The parser extracts candidates for the five agreement parts and the comparer assigns `aligned`, `check` or `missing`.
 6. React renders the `ComparisonSummary` and five `ComparisonCard` components from that result.
@@ -77,7 +77,7 @@ Owns the current drafts, result, editable confirmation, copy feedback and reset 
 
 ### Hero and Process Strip
 
-States the problem in one sentence, names the intended everyday use and explains the three-step loop. Includes the primary `Try the roommate example` action. Implements `prd.md > The Core Journey`.
+States the problem in one sentence and shows Maya's and Jordan's conflicting memories before asking the visitor to act. The example panel names the expected two matches and three checks, and its primary action runs the full sample comparison in one click. Implements `prd.md > The Core Journey`.
 
 ### Account Input
 

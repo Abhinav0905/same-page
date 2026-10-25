@@ -11,14 +11,15 @@ Same Page helps two people catch mismatched expectations before an everyday agre
 
 Source: `scope.md > The Core Loop`.
 
-1. A visitor lands on a short explanation: "Two people. One conversation. Two different memories."
-2. They can load a ready-made roommate example or type Person A's and Person B's versions of an agreement.
-3. The Compare button stays unavailable until both accounts contain useful text.
-4. The comparison appears as five plain-language cards: People, Action, Time, Money and Conditions.
-5. Each card shows `Aligned`, `Needs a check` or `Not mentioned`, plus the exact phrases from both accounts that led to that result.
-6. A summary counts what matches and what needs discussion. It never declares a winner.
-7. Same Page creates an editable confirmation message that asks only about unresolved details and preserves the agreed parts.
-8. The visitor copies the message or resets the experience.
+1. A visitor lands on the promise plus a worked roommate example that shows two memories of the same agreement side by side.
+2. The example names the expected outcome before interaction: two details align and three need a check.
+3. They can compare that example in one click or type Person A's and Person B's versions of another agreement.
+4. The Compare button stays unavailable until both accounts contain useful text.
+5. The comparison appears as five plain-language cards: People, Action, Time, Money and Conditions.
+6. Each card shows `Aligned`, `Needs a check` or `Not mentioned`, plus the exact phrases from both accounts that led to that result.
+7. A summary counts what matches and what needs discussion. It never declares a winner.
+8. Same Page creates an editable confirmation message that asks only about unresolved details and preserves the agreed parts.
+9. The visitor copies the message or resets the experience.
 
 Success is the moment a mismatch that looked harmless in the two paragraphs becomes obvious as a specific, answerable question.
 
@@ -28,7 +29,8 @@ Source: `scope.md > The POC Boundary`.
 
 The proof of concept is one responsive page with three stacked scenes:
 
-- **Welcome and input** — a crisp promise, a three-step explainer, sample button and two equal account cards.
+- **Welcome and worked example** — a crisp promise, two visibly different memories of one agreement, the expected 2-aligned/3-check result and a one-click comparison action.
+- **Input** — a three-step explainer and two equal account cards for editing the sample or entering another agreement.
 - **Comparison table** — a centered summary and five result cards, arranged in a row on wide screens and a vertical stack on small screens.
 - **Shared agreement** — an editable message on a paper-like card with Copy and Start over actions.
 
