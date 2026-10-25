@@ -77,7 +77,7 @@ Owns the current drafts, result, editable confirmation, copy feedback and reset 
 
 ### Hero and Process Strip
 
-States the problem in one sentence and shows Maya's and Jordan's conflicting memories before asking the visitor to act. The example panel names the expected two matches and three checks, and its primary action runs the full sample comparison in one click. Implements `prd.md > The Core Journey`.
+Names the intended audience, states the problem in one sentence and shows Maya's and Jordan's conflicting memories before asking the visitor to act. The example panel names the expected two matches and three checks, and its primary action runs the full sample comparison in one click. Implements `prd.md > The Core Journey`.
 
 ### Account Input
 
@@ -168,6 +168,8 @@ same-page/
 ├── tests/
 │   ├── compare.test.ts
 │   └── same-page.spec.ts
+├── scripts/
+│   └── capture-gallery.mjs
 ├── index.html
 ├── playwright.config.ts
 ├── package.json

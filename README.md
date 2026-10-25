@@ -25,10 +25,9 @@ npm run dev
 
 Open the URL Vite prints, normally `http://localhost:5173`, then:
 
-1. Click **Try the roommate example**.
-2. Click **Compare our versions**.
-3. Review the two aligned details and three gaps.
-4. Edit and copy the shared confirmation message.
+1. Click **Compare this example**.
+2. Review the two aligned details and three gaps.
+3. Edit and copy the shared confirmation message.
 
 No API key, account or network request is needed after installation.
 
@@ -54,6 +53,8 @@ npm test
 npm run build
 npm run test:e2e
 ```
+
+That is five comparison tests and three browser journeys, including the audience-first opening, complete roommate example and editable reset flow.
 
 ## Planning artifacts
 

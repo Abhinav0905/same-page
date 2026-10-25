@@ -49,6 +49,8 @@ h1 em { color: #ef9c88; font-weight: 400; }
 
 .hero-copy { max-width: 600px; font-size: 1.2rem; line-height: 1.65; color: #d8d3c9; }
 
+.audience-line { max-width: 600px; margin: -4px 0 0; color: #ef9c88; font-size: .84rem; font-weight: 800; line-height: 1.5; letter-spacing: .04em; text-transform: uppercase; }
+
 .sample-button, .compare-button { border: 0; border-radius: 999px; padding: 16px 24px; font-weight: 800; }
 
 .sample-button { background: #fffaf1; color: var(--ink); }

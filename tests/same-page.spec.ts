@@ -1,5 +1,10 @@
 import { expect, test } from "@playwright/test";
 
+test("names the audience before asking for input", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByText(/For roommates, partners and small teams/)).toBeVisible();
+});
+
 test("the roommate sample exposes three gaps and creates a shared message", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "One agreement. Two memories." })).toBeVisible();

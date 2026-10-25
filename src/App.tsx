@@ -73,6 +73,7 @@ function App() {
             <p className="hero-copy">
               Compare what each person heard before a small gap becomes a big argument. No blame. Just the details to check.
             </p>
+            <p className="audience-line">For roommates, partners and small teams confirming an everyday agreement.</p>
             <ol className="process" aria-label="How Same Page works">
               <li><span>1</span>Write each version</li>
               <li><span>2</span>Spot the gaps</li>

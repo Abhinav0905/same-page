@@ -11,7 +11,7 @@ Same Page helps two people catch mismatched expectations before an everyday agre
 
 Source: `scope.md > The Core Loop`.
 
-1. A visitor lands on the promise plus a worked roommate example that shows two memories of the same agreement side by side.
+1. A visitor lands on a named audience, the promise and a worked roommate example that shows two memories of the same agreement side by side.
 2. The example names the expected outcome before interaction: two details align and three need a check.
 3. They can compare that example in one click or type Person A's and Person B's versions of another agreement.
 4. The Compare button stays unavailable until both accounts contain useful text.
@@ -29,7 +29,7 @@ Source: `scope.md > The POC Boundary`.
 
 The proof of concept is one responsive page with three stacked scenes:
 
-- **Welcome and worked example** — a crisp promise, two visibly different memories of one agreement, the expected 2-aligned/3-check result and a one-click comparison action.
+- **Welcome and worked example** — a named audience, a crisp promise, two visibly different memories of one agreement, the expected 2-aligned/3-check result and a one-click comparison action.
 - **Input** — a three-step explainer and two equal account cards for editing the sample or entering another agreement.
 - **Comparison table** — a centered summary and five result cards, arranged in a row on wide screens and a vertical stack on small screens.
 - **Shared agreement** — an editable message on a paper-like card with Copy and Start over actions.
