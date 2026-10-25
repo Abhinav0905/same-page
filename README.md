@@ -1,0 +1,68 @@
+# Same Page
+
+**Two people. One conversation. Two different memories.**
+
+Same Page compares two accounts of an everyday agreement across five concrete details: who, what, when, money and conditions. It shows the exact phrases that align or differ, then creates an editable confirmation message so the people involved can settle the gaps together.
+
+Built for [Build With AI: Basics](https://learn-ai-basics.devpost.com/) with the Devpost Learn Skill Pack.
+
+## Why it exists
+
+Small disagreements often begin with two people honestly remembering the same conversation differently. A generic summary hides that difference. Same Page keeps the two accounts separate, compares them without blame and turns each mismatch into one answerable question.
+
+## Try the proof of concept
+
+Requirements: Node.js 20 or newer.
+
+```bash
+npm install
+npm run dev
+```
+
+Open the URL Vite prints, normally `http://localhost:5173`, then:
+
+1. Click **Try the roommate example**.
+2. Click **Compare our versions**.
+3. Review the two aligned details and three gaps.
+4. Edit and copy the shared confirmation message.
+
+No API key, account or network request is needed after installation.
+
+## What the demo proves
+
+- Two independent accounts remain visible.
+- The comparison checks People, Action, Time, Money and Conditions.
+- Every result includes the words that produced it.
+- Missing details stay missing. The app does not invent them.
+- Neither person is labeled right or wrong.
+- The result ends in an editable message. Nothing is sent automatically.
+
+## How it works
+
+The proof of concept uses a transparent TypeScript phrase engine. It recognizes a narrow set of everyday rent-agreement patterns, normalizes the details and compares them. This is intentionally not presented as a universal language model or a truth detector.
+
+The event is about learning to build with an AI coding agent. The app was planned and built through the Devpost Learn Skill Pack; it does not call a model at runtime. A later version could replace the phrase engine with a model that returns validated structured data, while keeping the same evidence and uncertainty rules.
+
+## Checks
+
+```bash
+npm test
+npm run build
+npm run test:e2e
+```
+
+## Planning artifacts
+
+- [`devpost/scope.md`](devpost/scope.md)
+- [`devpost/prd.md`](devpost/prd.md)
+- [`devpost/spec.md`](devpost/spec.md)
+- [`devpost/checklist.md`](devpost/checklist.md)
+
+## Boundaries
+
+Same Page is a conversation aid, not a mediator, legal tool or record of what was said. Text stays in browser memory and disappears on reset or refresh.
+
+## License
+
+MIT. See [`LICENSE`](LICENSE).
+

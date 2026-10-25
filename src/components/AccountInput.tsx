@@ -13,6 +13,7 @@ export function AccountInput({ label, value, onChange }: AccountInputProps) {
       <label>
         Name
         <input
+          aria-label={`${label} name`}
           value={value.personName}
           onChange={(event) => onChange({ ...value, personName: event.target.value })}
           placeholder="First name"
@@ -22,6 +23,7 @@ export function AccountInput({ label, value, onChange }: AccountInputProps) {
       <label>
         What do you remember agreeing to?
         <textarea
+          aria-label={`${label} agreement`}
           value={value.text}
           onChange={(event) => onChange({ ...value, text: event.target.value })}
           placeholder="Write it in your own words…"
@@ -29,7 +31,7 @@ export function AccountInput({ label, value, onChange }: AccountInputProps) {
           maxLength={500}
         />
       </label>
-      <span className="character-count">{value.text.length}/500</span>
+      {value.text.length > 400 && <span className="character-count">{value.text.length}/500</span>}
     </article>
   );
 }

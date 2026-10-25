@@ -19,7 +19,7 @@ Build mode: fast
   Learner check: Load the roommate sample, compare the versions and confirm People and Action align while Time, Money and Conditions need review.
   Commit: `Build the two-account comparison loop`
 
-- [ ] **2. Evidence cards make every mismatch understandable**
+- [x] **2. Evidence cards make every mismatch understandable**
   Becomes usable: Each dimension has a polished, accessible status card with both evidence phrases, a clear summary and honest missing-detail behavior.
   Why now: The engine works; this slice turns its output into the visual moment a general audience can understand in seconds.
   PRD ref: `prd.md > Structured comparison`, `prd.md > Screens and Layout`, `prd.md > Look and Feel`

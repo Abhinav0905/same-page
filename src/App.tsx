@@ -2,8 +2,10 @@ import { useMemo, useRef, useState } from "react";
 import { AccountInput } from "./components/AccountInput";
 import { ComparisonCard } from "./components/ComparisonCard";
 import { ComparisonSummary } from "./components/ComparisonSummary";
+import { SharedConfirmation } from "./components/SharedConfirmation";
 import { roommateSample } from "./data/roommateSample";
 import { compareAccounts } from "./lib/compare";
+import { buildConfirmation } from "./lib/confirmation";
 import type { AgreementDraft, ComparisonResult } from "./types";
 
 const emptyDraft: AgreementDraft = { personName: "", text: "" };
@@ -12,6 +14,7 @@ function App() {
   const [accountA, setAccountA] = useState<AgreementDraft>(emptyDraft);
   const [accountB, setAccountB] = useState<AgreementDraft>(emptyDraft);
   const [result, setResult] = useState<ComparisonResult | null>(null);
+  const [confirmation, setConfirmation] = useState("");
   const resultsRef = useRef<HTMLElement>(null);
 
   const canCompare = useMemo(
@@ -23,12 +26,35 @@ function App() {
     setAccountA(roommateSample.accountA);
     setAccountB(roommateSample.accountB);
     setResult(null);
+    setConfirmation("");
+  };
+
+  const changeAccountA = (next: AgreementDraft) => {
+    setAccountA(next);
+    setResult(null);
+    setConfirmation("");
+  };
+
+  const changeAccountB = (next: AgreementDraft) => {
+    setAccountB(next);
+    setResult(null);
+    setConfirmation("");
   };
 
   const compare = () => {
     if (!canCompare) return;
-    setResult(compareAccounts(accountA, accountB));
+    const nextResult = compareAccounts(accountA, accountB);
+    setResult(nextResult);
+    setConfirmation(buildConfirmation(accountA, accountB, nextResult));
     requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  };
+
+  const reset = () => {
+    setAccountA(emptyDraft);
+    setAccountB(emptyDraft);
+    setResult(null);
+    setConfirmation("");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -58,8 +84,8 @@ function App() {
         </div>
 
         <div className="notes-grid">
-          <AccountInput label="Version A" value={accountA} onChange={setAccountA} />
-          <AccountInput label="Version B" value={accountB} onChange={setAccountB} />
+          <AccountInput label="Version A" value={accountA} onChange={changeAccountA} />
+          <AccountInput label="Version B" value={accountB} onChange={changeAccountB} />
         </div>
 
         <div className="compare-row">
@@ -90,6 +116,10 @@ function App() {
             Same Page compares the words you entered. It cannot know what was said, intended or promised.
           </p>
         </section>
+      )}
+
+      {result && (
+        <SharedConfirmation value={confirmation} onChange={setConfirmation} onReset={reset} />
       )}
 
       <footer>

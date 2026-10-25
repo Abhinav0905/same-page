@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { roommateSample } from "../src/data/roommateSample";
 import { compareAccounts } from "../src/lib/compare";
+import { buildConfirmation } from "../src/lib/confirmation";
 
 describe("compareAccounts", () => {
   it("finds the intended roommate mismatches", () => {
@@ -48,5 +49,15 @@ describe("compareAccounts", () => {
 
     expect(result.dimensions.find((item) => item.dimension === "money")?.verdict).toBe("missing");
     expect(result.dimensions.find((item) => item.dimension === "time")?.verdict).toBe("missing");
+  });
+
+  it("turns the sample gaps into neutral confirmation questions", () => {
+    const result = compareAccounts(roommateSample.accountA, roommateSample.accountB);
+    const message = buildConfirmation(roommateSample.accountA, roommateSample.accountB, result);
+
+    expect(message).toContain("Maya will handle the rent payment");
+    expect(message).toContain("Amount: is it $800, or half of the $1,700?");
+    expect(message).toContain("Timing: is it by Friday, October 30, or on Monday, November 2?");
+    expect(message).toContain("Condition: should it be after the utility bill arrives, or even if the utility bill hasn't arrived?");
   });
 });

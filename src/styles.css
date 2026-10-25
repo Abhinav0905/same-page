@@ -6,7 +6,7 @@
   text-rendering: optimizeLegibility;
   --ink: #20201d;
   --paper: #fffaf1;
-  --coral: #d85f4a;
+  --coral: #b84c3b;
   --green: #27705e;
   --line: #d8cbb9;
 }
@@ -28,7 +28,7 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visib
 
 main { overflow: hidden; }
 
-.hero, .input-section, .results-section, footer { padding: 64px max(24px, calc((100vw - 1120px) / 2)); }
+.hero, .input-section, .results-section, .confirmation-section, footer { padding: 64px max(24px, calc((100vw - 1120px) / 2)); }
 
 .hero { min-height: 680px; background: radial-gradient(circle at 80% 18%, #ffd8cb 0, transparent 27%), #20201d; color: #fffaf1; }
 
@@ -131,6 +131,24 @@ textarea { resize: vertical; min-height: 160px; line-height: 1.6; }
 .truth-note { display: flex; gap: 10px; align-items: flex-start; max-width: 720px; margin: 28px auto 0; color: #766e63; font-size: .82rem; line-height: 1.5; }
 .truth-note span { flex: 0 0 auto; display: grid; place-items: center; width: 20px; height: 20px; border: 1px solid #a89f93; border-radius: 50%; font-family: Georgia, serif; font-weight: 800; }
 
+.confirmation-section { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: start; background: #dd705c; }
+.confirmation-intro { position: sticky; top: 30px; color: #211f1c; }
+.confirmation-intro .eyebrow { margin-top: 0; color: #fff6ed; }
+.confirmation-intro h2 { max-width: 500px; }
+.confirmation-intro > p:last-child { max-width: 430px; line-height: 1.6; }
+
+.confirmation-card { position: relative; padding: 34px; border: 1px solid #d1c5b4; border-radius: 6px; background: #fffaf1; box-shadow: 16px 18px 0 rgba(65, 39, 31, .16); transform: rotate(.6deg); }
+.confirmation-card::after { position: absolute; inset: 14px; border: 1px solid #eadfce; border-radius: 2px; content: ""; pointer-events: none; }
+.paperclip { position: absolute; z-index: 1; top: -16px; right: 36px; width: 20px; height: 54px; border: 3px solid #39403b; border-bottom: 0; border-radius: 12px 12px 0 0; transform: rotate(9deg); }
+.confirmation-card label { position: relative; z-index: 1; display: block; margin-bottom: 10px; color: #71695f; font-size: .75rem; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+.confirmation-card textarea { position: relative; z-index: 1; min-height: 300px; border: 0; background: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, #e5d9c8 32px); border-radius: 0; padding: 8px 4px; font-family: Georgia, "Times New Roman", serif; font-size: 1.02rem; line-height: 2rem; resize: vertical; }
+.confirmation-card textarea:focus-visible { outline-color: var(--coral); }
+.confirmation-actions { position: relative; z-index: 1; display: flex; gap: 12px; margin-top: 22px; }
+.copy-button, .reset-button { border-radius: 999px; padding: 13px 20px; font-weight: 850; }
+.copy-button { border: 0; background: var(--ink); color: #fff; }
+.reset-button { border: 1px solid #bfb09e; background: transparent; color: var(--ink); }
+.send-note { position: relative; z-index: 1; margin: 18px 0 0; color: #7d7468; font-size: .76rem; }
+
 footer { display: grid; grid-template-columns: 1fr auto auto; gap: 30px; align-items: center; background: var(--ink); color: #a9a49b; font-size: .8rem; }
 .footer-wordmark { color: #fffaf1; }
 footer p { margin: 0; }
@@ -141,7 +159,7 @@ footer p { margin: 0; }
 }
 
 @media (max-width: 760px) {
-  .hero, .input-section, .results-section, footer { padding: 42px 20px; }
+  .hero, .input-section, .results-section, .confirmation-section, footer { padding: 42px 20px; }
   .hero { min-height: 620px; }
   .process { align-items: flex-start; flex-direction: column; gap: 14px; margin-top: 48px; }
   .notes-grid { grid-template-columns: 1fr; }
@@ -154,6 +172,10 @@ footer p { margin: 0; }
   .verdict-pill { grid-column: 2; justify-self: start; }
   .result-summary, .evidence-grid { margin-left: 0; }
   .evidence-grid { grid-template-columns: 1fr; }
+  .confirmation-section { grid-template-columns: 1fr; gap: 30px; }
+  .confirmation-intro { position: static; }
+  .confirmation-card { padding: 28px 22px; transform: none; box-shadow: 8px 10px 0 rgba(65, 39, 31, .14); }
+  .confirmation-actions { align-items: stretch; flex-direction: column; }
   footer { grid-template-columns: 1fr; gap: 12px; }
 }
 
