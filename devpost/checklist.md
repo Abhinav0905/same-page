@@ -29,7 +29,7 @@ Build mode: fast
   Learner check: Read the five sample cards without reading the original paragraphs and say whether each disagreement is immediately clear.
   Commit: `Turn comparison results into evidence cards`
 
-- [ ] **3. The loop ends with one shared message**
+- [x] **3. The loop ends with one shared message**
   Becomes usable: The result produces an editable confirmation message that can be copied, and the whole experience can be reset and repeated.
   Why now: This closes the product loop after the distinctive comparison is already proven.
   PRD ref: `prd.md > Shared confirmation`, `prd.md > States and Boundaries`, `prd.md > What We're Building`
@@ -50,15 +50,15 @@ Build mode: fast
 
 ## Code Tour and App Map
 
-- [ ] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
-- [ ] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
-- [ ] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
+- [x] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
+- [x] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
+- [x] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
 
-Activity and evidence: Not started.
-Route and stops: Not started.
-Edit outcome: Not started.
-Reflection: Not started.
-Activity mode: fast mode; focused alternative planned.
+Activity and evidence: Brief evidence recap connected the goal of making a simple idea instantly clear to `prd.md > Structured comparison`, the exact 2-aligned/3-check assertions in `tests/compare.test.ts`, and the visible browser result exercised by `tests/same-page.spec.ts`.
+Route and stops: Reference route recorded in the app map: `src/App.tsx > compare`, `src/lib/compare.ts > compareAccounts`, `src/components/ComparisonCard.tsx > ComparisonCard`, and `src/lib/confirmation.ts > buildConfirmation`.
+Edit outcome: Not applicable; the learner requested a fast, no-question build and the final visual pass produced no retained wording edit beyond tested implementation fixes.
+Reflection: Already covered by the learner's stated goal: favor one clear, general-audience product loop over a larger feature list.
+Activity mode: Fast-mode brief recap plus live app, desktop and mobile checks.
 
 ## Revisions
 

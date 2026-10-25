@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Same Page · App Map</title>
+  <style>
+    :root { color-scheme: light; --ink:#20201d; --paper:#fffaf1; --sand:#f3eadc; --coral:#b84c3b; --green:#27705e; --line:#d8cbb9; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--sand); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.55; }
+    main { width:min(1040px,calc(100% - 32px)); margin:32px auto 72px; }
+    header { padding:42px; border-radius:18px; background:var(--ink); color:var(--paper); }
+    .eyebrow { margin:0 0 10px; color:#efa08e; font-size:.76rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    h1,h2 { font-family:Georgia,"Times New Roman",serif; font-weight:500; letter-spacing:-.035em; }
+    h1 { max-width:760px; margin:0; font-size:clamp(2.8rem,8vw,5.8rem); line-height:.96; }
+    header p:last-child { max-width:650px; color:#d2cdc3; }
+    section { margin-top:18px; padding:30px; border:1px solid var(--line); border-radius:14px; background:var(--paper); }
+    h2 { margin:0 0 18px; font-size:2rem; }
+    h3 { margin-bottom:6px; }
+    p { margin-top:6px; }
+    code { padding:.14rem .35rem; border-radius:4px; background:#eee5d8; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9em; }
+    .diagram { overflow-x:auto; }
+    svg { display:block; min-width:760px; width:100%; height:auto; }
+    .route,.pointers { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    article { padding:18px; border:1px solid var(--line); border-radius:10px; background:#fff; }
+    .number { display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--coral); color:#fff; font-weight:800; }
+    .practice { border-left:5px solid var(--green); }
+    details { margin-top:14px; padding:14px 16px; border:1px solid var(--line); border-radius:9px; background:#fff; }
+    summary { cursor:pointer; font-weight:800; }
+    pre { overflow:auto; padding:16px; border-radius:8px; background:#272621; color:#fffaf1; }
+    a { color:var(--coral); }
+    footer { margin-top:18px; color:#71695f; font-size:.84rem; }
+    @media(max-width:760px){ header,section{padding:24px}.route,.pointers{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Finished-code reference</p>
+    <h1>Same Page, mapped.</h1>
+    <p>Two accounts enter separately. A small comparison engine turns them into five evidence-backed checks, then one editable message.</p>
+  </header>
+
+  <section>
+    <h2>One action through the app</h2>
+    <div class="diagram" role="img" aria-label="The Compare button sends two accounts to the comparison engine, which returns result cards and a shared message">
+      <svg viewBox="0 0 960 250" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#7d7468"/></marker></defs>
+        <rect x="20" y="55" width="210" height="140" rx="14" fill="#fff4eb" stroke="#d8cbb9"/>
+        <text x="45" y="88" font-family="system-ui" font-size="14" font-weight="700" fill="#b84c3b">INPUT</text>
+        <text x="45" y="124" font-family="Georgia" font-size="24" fill="#20201d">Two accounts</text>
+        <text x="45" y="153" font-family="system-ui" font-size="13" fill="#71695f">App.tsx · compare()</text>
+        <path d="M235 125H355" stroke="#7d7468" stroke-width="2" marker-end="url(#arrow)"/>
+        <rect x="365" y="35" width="230" height="180" rx="14" fill="#fff" stroke="#d8cbb9"/>
+        <text x="390" y="70" font-family="system-ui" font-size="14" font-weight="700" fill="#b84c3b">COMPARE</text>
+        <text x="390" y="106" font-family="Georgia" font-size="24" fill="#20201d">Five details</text>
+        <text x="390" y="137" font-family="system-ui" font-size="13" fill="#71695f">extractors.ts</text>
+        <text x="390" y="160" font-family="system-ui" font-size="13" fill="#71695f">compareAccounts()</text>
+        <text x="390" y="185" font-family="system-ui" font-size="13" fill="#27705e">aligned · check · missing</text>
+        <path d="M600 125H720" stroke="#7d7468" stroke-width="2" marker-end="url(#arrow)"/>
+        <rect x="730" y="55" width="210" height="140" rx="14" fill="#f2faf7" stroke="#b8d5cc"/>
+        <text x="755" y="88" font-family="system-ui" font-size="14" font-weight="700" fill="#27705e">OUTPUT</text>
+        <text x="755" y="124" font-family="Georgia" font-size="24" fill="#20201d">Checks + message</text>
+        <text x="755" y="153" font-family="system-ui" font-size="13" fill="#71695f">ComparisonCard.tsx</text>
+        <text x="755" y="176" font-family="system-ui" font-size="13" fill="#71695f">buildConfirmation()</text>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>Three useful stops</h2>
+    <div class="route">
+      <article>
+        <span class="number">1</span>
+        <h3><code>src/App.tsx</code></h3>
+        <p>Start at <code>compare</code>. It connects the button to both output paths and clears old results when either account changes.</p>
+      </article>
+      <article>
+        <span class="number">2</span>
+        <h3><code>src/lib/compare.ts</code></h3>
+        <p><code>compareAccounts</code> is the product's core. It checks each dimension, refuses to guess and counts the details that need review.</p>
+      </article>
+      <article>
+        <span class="number">3</span>
+        <h3><code>src/components/ComparisonCard.tsx</code></h3>
+        <p><code>ComparisonCard</code> turns one result into a readable status, explanation and two evidence quotes. The user sees the reason, not just a score.</p>
+      </article>
+    </div>
+    <details>
+      <summary>Where the final message comes from</summary>
+      <p><code>src/lib/confirmation.ts > buildConfirmation</code> takes the same comparison result and asks one neutral question per unresolved detail. <code>src/components/SharedConfirmation.tsx</code> keeps it editable and handles copy failure without losing the text.</p>
+    </details>
+  </section>
+
+  <section>
+    <h2>To change this, start here</h2>
+    <div class="pointers">
+      <article><h3>Add a new sample</h3><p>Edit <code>src/data/roommateSample.ts</code>. Keep the expected result explicit in <code>tests/compare.test.ts</code>.</p></article>
+      <article><h3>Recognize another phrase</h3><p>Edit the relevant function in <code>src/lib/extractors.ts</code>. Add an example that should match and one that must stay unknown.</p></article>
+      <article><h3>Change the visual voice</h3><p>Start with the variables and section rules in <code>src/styles.css</code>. Status meaning must still use text and icons, not color alone.</p></article>
+    </div>
+  </section>
+
+  <section class="practice">
+    <h2>A practice to reuse</h2>
+    <p>The requirement was concrete: the roommate sample must return two aligned details and three that need review. <code>tests/compare.test.ts</code> fixes that outcome in code, while <code>tests/same-page.spec.ts</code> proves a visitor can reach and use it in the browser.</p>
+    <p>On another project, write the visible result first. Then build the smallest path that makes that result true. It keeps a simple proof honest and stops setup work from replacing the product.</p>
+  </section>
+
+  <section>
+    <h2>Run it again</h2>
+    <pre><code>npm install
+npm run dev
+
+# all checks
+npm test
+npm run build
+npm run test:e2e</code></pre>
+    <p>Source snapshot: commit <code>0ed8493</code>. This map is a snapshot and should be refreshed if the comparison journey changes.</p>
+  </section>
+
+  <footer>Same Page · Public-safe project map · No personal learner context included</footer>
+</main>
+</body>
+</html>
